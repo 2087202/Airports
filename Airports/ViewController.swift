@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import SQLite
+
 
 class ViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let apdbhelper = AirportDatabaseHelper()
+        
+        for airport in apdbhelper.getAllAirports() {
+            
+            print(airport.name)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
